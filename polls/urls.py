@@ -8,6 +8,6 @@ urlpatterns = [
     path('mentor',views.mentor, name='mentor'),
     path('mentee',views.mentee, name='mentee'),
     path('author',views.author, name='author'),
-    path('form', views.form, name='form')
-
+    path('form', views.form, name='form'),
+    path('blog/<int:lengkap_id>/',views.lengkap, name='lengkap'),
 ]

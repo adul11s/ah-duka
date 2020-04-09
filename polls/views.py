@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Blog, Mentor, Mentee
 from .form import BlogForm
@@ -33,6 +33,11 @@ def form(request):
     form = BlogForm()
     return render(request,'submit.html',{
         'form' : form
+    })
+def lengkap(request, lengkap_id):
+    lengkap = get_object_or_404(Blog, pk=lengkap_id)
+    return render(request, 'lengkap.html',{
+        'lengkap' : lengkap
     })
 
 
